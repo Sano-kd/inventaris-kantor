@@ -1,0 +1,152 @@
+/* ===== Dasar ===== */
+:root {
+    --bg: #f4f6fb;
+    --card: #ffffff;
+    --text: #1e293b;
+    --muted: #64748b;
+    --line: #e2e8f0;
+    --primary: #2563eb;
+    --primary-dark: #1d4ed8;
+    --danger: #dc2626;
+    --ok: #047857;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+a { color: var(--primary); }
+
+:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
+
+/* ===== Kartu ===== */
+.card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    box-shadow: 0 1px 3px rgba(15, 23, 42, .06), 0 8px 24px rgba(15, 23, 42, .04);
+}
+
+/* ===== Tombol ===== */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 18px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    font: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background .15s, border-color .15s;
+}
+.btn-primary { background: var(--primary); color: #fff; }
+.btn-primary:hover { background: var(--primary-dark); }
+.btn-ghost { background: #fff; color: var(--text); border-color: #cbd5e1; }
+.btn-ghost:hover { background: #f1f5f9; }
+.btn-sm { padding: 6px 12px; font-size: 13px; }
+.btn-edit { background: #eff6ff; color: var(--primary); border-color: #bfdbfe; }
+.btn-edit:hover { background: #dbeafe; }
+.btn-danger { background: #fef2f2; color: var(--danger); border-color: #fecaca; }
+.btn-danger:hover { background: #fee2e2; }
+.btn-block { width: 100%; }
+
+/* ===== Pilihan bahasa ===== */
+.lang-switch { display: inline-flex; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; background: #fff; }
+.lang-switch a { padding: 4px 10px; font-size: 13px; font-weight: 600; text-decoration: none; color: var(--muted); }
+.lang-switch a.aktif { background: var(--primary); color: #fff; }
+
+/* ===== Form ===== */
+.field { margin-bottom: 16px; }
+.field label { display: block; margin-bottom: 6px; font-size: 14px; font-weight: 600; }
+
+input[type="text"], input[type="password"], select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    background: #fff;
+    color: var(--text);
+    font: inherit;
+    transition: border-color .15s, box-shadow .15s;
+}
+input:focus, select:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, .15);
+}
+.invalid, .invalid:focus { border-color: var(--danger); }
+
+.err { display: block; margin-top: 5px; color: var(--danger); font-size: 13px; }
+
+.rupiah { display: flex; border: 1px solid #cbd5e1; border-radius: 8px; overflow: hidden; background: #fff; transition: border-color .15s, box-shadow .15s; }
+.rupiah:focus-within { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(37, 99, 235, .15); }
+.rupiah.invalid { border-color: var(--danger); }
+.rupiah span { display: flex; align-items: center; padding: 0 12px; background: #f1f5f9; color: var(--muted); font-weight: 600; border-right: 1px solid #cbd5e1; }
+.rupiah input { border: 0; border-radius: 0; box-shadow: none; }
+.rupiah input:focus { box-shadow: none; }
+
+.row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.form-actions { display: flex; justify-content: flex-end; gap: 10px; margin-top: 8px; }
+
+/* ===== Halaman login & form (di tengah) ===== */
+.center-wrap {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+}
+.form-card { width: 100%; max-width: 440px; padding: 28px; }
+.login-card { max-width: 380px; }
+
+.form-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+.form-head h1 { margin: 0; font-size: 22px; }
+.app-name { margin: 0 0 4px; color: var(--muted); font-size: 13px; }
+
+.alert-err { margin-bottom: 16px; padding: 10px 12px; border-radius: 8px; background: #fef2f2; border: 1px solid #fecaca; color: #b91c1c; font-size: 14px; }
+
+/* ===== Halaman daftar data ===== */
+.page { max-width: 1050px; margin: 0 auto; padding: 28px 20px 40px; }
+
+.topbar { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; margin-bottom: 20px; }
+.topbar h1 { margin: 0; font-size: 24px; }
+.topbar-right { display: flex; align-items: center; gap: 14px; font-size: 14px; }
+.user { color: var(--muted); }
+
+.alert-ok { margin-bottom: 16px; padding: 10px 14px; border-radius: 8px; background: #ecfdf5; border: 1px solid #a7f3d0; color: var(--ok); font-size: 14px; }
+
+.table-wrap { overflow-x: auto; }
+table.data { width: 100%; border-collapse: collapse; }
+table.data th, table.data td { padding: 12px 16px; text-align: left; white-space: nowrap; }
+table.data thead th { background: #f8fafc; color: var(--muted); font-size: 13px; font-weight: 600; border-bottom: 1px solid var(--line); }
+table.data tbody td { border-bottom: 1px solid var(--line); }
+table.data tbody tr:last-child td { border-bottom: 0; }
+table.data tbody tr:hover { background: #f8fafc; }
+table.data .num { text-align: right; }
+table.data .aksi { text-align: right; }
+table.data .aksi .btn { margin-left: 4px; }
+td.kosong { text-align: center; color: var(--muted); padding: 32px 16px; }
+
+.table-footer { display: flex; justify-content: flex-end; padding: 14px 16px; border-top: 1px solid var(--line); }
+
+@media (max-width: 520px) {
+    .row { grid-template-columns: 1fr; }
+    .form-card { padding: 22px; }
+}
+
+/* ===== Pencarian & tombol hapus ===== */
+.toolbar { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; padding: 14px 16px; border-bottom: 1px solid var(--line); }
+.search { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.search input[type="text"] { width: 260px; max-width: 100%; }
+.total { color: var(--muted); font-size: 14px; }
+.inline { display: inline; margin: 0; }
