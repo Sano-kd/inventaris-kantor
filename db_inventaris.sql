@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 28, 2026 at 04:18 PM
+-- Generation Time: Oct 30, 2026 at 12:32 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -78,7 +78,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `password`) VALUES
-(1, 'admin', '$2y$10$w8L7aK4ZR/R9UbrrflJKCuH/HmTaSHY33lCBfdWvci1iFlcn5xd0m');
+(1, 'admin-kadek', '$2y$10$7JHdJE2ibqyjiL.5DjEbqO9Kq9t8mqvEUlOrIqwVBH/oaOIIuXslm');
 
 --
 -- Indexes for dumped tables
